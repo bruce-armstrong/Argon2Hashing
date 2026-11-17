@@ -91,3 +91,7 @@ end if
 ```
 
 PowerBuilder strings are passed to .NET as Unicode and hashed as UTF-8, the same as other Argon2 libraries. So non-ASCII passwords give interoperable hashes.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
