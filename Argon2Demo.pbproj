@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Project>
+  <Type Name="pb"/>
+  <Application Name="argon2demo"/>
+  <DeployConfigurations OutputDirectory="Build\bin\$(ConfigurationName)">
+    <DeployConfiguration Name="p_argon2demo_exe" Path="PowerBuilder\argon2demo.pbl\p_argon2demo_exe.srj"/>
+  </DeployConfigurations>
+  <Libraries AppEntry="PowerBuilder\argon2demo.pbl">
+    <Library Path="PowerBuilder\argon2demo.pbl"/>
+  </Libraries>
+</Project>

@@ -1,0 +1,14 @@
+# Build output
+/build/
+/.pb/
+*.pbd
+*.ast
+*.opt
+
+# .NET build output
+bin/
+obj/
+
+# Assembly copied to the solution folder by build.ps1
+/Argon2Hashing.dll
+/Argon2Hashing.deps.json

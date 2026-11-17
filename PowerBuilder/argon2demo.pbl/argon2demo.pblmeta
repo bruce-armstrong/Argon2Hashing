@@ -1,0 +1,4 @@
+﻿{
+    "version": "250",
+    "comment": "Argon2 password hashing via an imported .NET assembly"
+}

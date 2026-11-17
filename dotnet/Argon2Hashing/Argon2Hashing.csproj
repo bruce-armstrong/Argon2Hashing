@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!--
+      Two builds of the same code, both with no third-party dependencies (a single DLL to deploy):
+        net8.0 : load in PowerBuilder 2022 R2+ with DotNetAssembly.LoadWithDotNetCore   (used by the demo)
+        net48  : load in PowerBuilder 2019 R3+ with DotNetAssembly.LoadWithDotNetFramework
+      Pick the matching framework when importing with the .NET DLL Importer.
+    -->
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <RootNamespace>Argon2Hashing</RootNamespace>
+    <AssemblyName>Argon2Hashing</AssemblyName>
+    <!-- AnyCPU works for 32-bit and 64-bit PB apps (for net8.0 the matching x86/x64 .NET runtime must be installed). -->
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Version>1.0.0</Version>
+    <Description>Dependency-free Argon2 (RFC 9106) password hashing, shaped for the PowerBuilder .NET DLL Importer.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Argon2Hashing.Tests" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
